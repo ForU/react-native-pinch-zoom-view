@@ -1,61 +1,72 @@
+"use restrict";
+
 import React, { Component } from 'react';
 import {
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  Text,
-  TextInput,
-  View
+	StyleSheet,
+    StatusBar,
+	View,
+    Image,
+	Text,
+    TextInput,
+    TouchableOpacity,
+    TouchableWithoutFeedback
 } from 'react-native';
-import PinchZoomView from 'react-native-pinch-zoom-view';
 
-export default class Example extends Component {
-  render() {
-    return (
-      <PinchZoomView>
-        <Text>View</Text>
-        <View style={styles.view}></View>
-        <View style={styles.divider}></View>
+var ReactPropTypes = React.PropTypes;
 
-        <Text>Text</Text>
-        <Text>Some Text</Text>
-        <View style={styles.divider}></View>
 
-        <Text>TextInput</Text>
-        <TextInput style={styles.textInput}></TextInput>
-        <View style={styles.divider}></View>
+//import PinchZoomView from 'react-native-pinch-zoom-view';
+var PinchZoomView = require('./PinchZoomView');
 
-        <Text>Image</Text>
-        <Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
-               style={styles.image} />
-        <View style={styles.divider}></View>
-        
-        <Text>Touchable*</Text>
-        <TouchableOpacity style={styles.rect}></TouchableOpacity>
-      </PinchZoomView>
-    );
-  }
-}
+var Example = React.createClass({
+    propTypes: {
+    },
 
-const styles = StyleSheet.create({
-  view: {
-    width: 100,
-    height: 100,
-    borderWidth: 1
-  },
-  textInput: {
-    width: 100
-  },
-  image: {
-    width: 100, 
-    height: 100
-  },
-  rect: {
-    width: 100,
-    height: 100,
-    backgroundColor: '#ddd'
-  },
-  divider: {
-    marginBottom: 25
-  }
+    getDefaultProps: function() {
+        return {};
+    },
+
+    getInitialState: function() {
+        return {};
+    },
+
+    componentWillReceiveProps: function(nextProps) {
+    },
+
+    componentWillMount: function() {
+    },
+
+    componentDidMount: function() {
+    },
+
+    componentWillUnmount: function() {
+    },
+
+    render: function() {
+
+        return (
+                <View style={{flex:1, backgroundColor:'darkslateblue'}}>
+                <StatusBar hidden={true}/>
+
+                <PinchZoomView style={{flex:0, backgroundColor:'transparent'}}>
+                <Text style={{fontSize:30, padding:10, paddingHorizontal:15, fontWeight:'bold', color:'black', backgroundColor:'lime'}}>{'#NBAFinals🏀2017'}</Text>
+                </PinchZoomView>
+
+                <PinchZoomView style={{flex:0, backgroundColor:'transparent'}}>
+                <Text style={{fontSize:30, padding:10, paddingHorizontal:15, fontWeight:'bold', color:'#243f90', backgroundColor:'yellow'}}>{'#30CURRY'}</Text>
+                </PinchZoomView>
+
+                <PinchZoomView style={{flex:1, backgroundColor:'#fff'}}>
+                <Image source={{uri:'http://wwwcdn.howdesign.com/wp-content/uploads/LogoPrimary_300x329.jpg'}} style={{width:300, height:329 }}/>
+                </PinchZoomView>
+
+                </View>
+        );
+    }
 });
+
+var ss = StyleSheet.create({
+});
+
+
+module.exports = Example;
