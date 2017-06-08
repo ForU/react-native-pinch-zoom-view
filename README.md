@@ -15,7 +15,7 @@ A pinch-to-zoom view for React Native. All the components wrapped in the view is
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  TextInput
+  Text
 } from 'react-native';
 import PinchZoomView from 'react-native-pinch-zoom-view';
 
@@ -23,7 +23,7 @@ class APP extends Component {
   render() {
     return (
       <PinchZoomView>
-        <TextInput style={{width: 100}}></TextInput>
+        <Text style={{width:100, backgroundColor:'darkslateblue', color:'white'}}>{'hello world!'}</Text>
       </PinchZoomView>
     );
   }
