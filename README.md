@@ -2,9 +2,9 @@
 
 A pinch-to-zoom view for React Native. All the components wrapped in the view is scalable while still be able to respond to touch events.
 
-## Screenshots
+## Screenshot
 
-![](https://github.com/ForU/react-native-pinch-zoom-view/blob/master/demo.PNG?raw=true)
+[logo]: https://github.com/ForU/react-native-pinch-zoom-view/blob/master/demo.png?raw=true
 
 
 ## Install
